@@ -8,10 +8,16 @@ from ckeditor.widgets import CKEditorWidget
 
 
 class PostForm(forms.ModelForm):
-    content = forms.CharField(widget=CKEditorWidget())
+    # content = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
         model = Post
         fields = ['title', 'content', 'video_url']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
+
+        }
 
 
 class UserRegisterForm(UserCreationForm):

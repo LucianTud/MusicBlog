@@ -1,0 +1,25 @@
+<div class="comments-section">
+    <h3>{{ comments.count }} Comentarii</h3>
+
+    {% for comment in comments %}
+        <div class="comment mb-3">
+            <strong>{{ comment.user.username }}</strong>
+            <small class="text-muted">{{ comment.created_at|date:"d M Y H:i" }}</small>
+            <p>{{ comment.content }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>Fii primul care comentează această postare!</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <h4>Adaugă un comentariu</h4>
+        <form method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="btn btn-primary">Trimite</button>
+        </form>
+    {% else %}
+        <p><a href="{% url 'login' %}">Autentifică-te</a> pentru a comenta.</p>
+    {% endif %}
+</div>

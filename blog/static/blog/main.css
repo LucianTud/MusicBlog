@@ -1,0 +1,202 @@
+/* Body și fundal general pentru un blog muzical */
+body {
+    background: linear-gradient(135deg, #ff4d6d, #4b9cc3); /* Gradient cu culori muzicale (roz și albastru) */
+    color: #ffffff;
+    margin-top: 5rem;
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-attachment: fixed; /* Fundalul rămâne fix în timp ce derulezi */
+}
+
+ul {
+    margin: 0;
+}
+
+.bg-steel {
+    background-color: #292929;
+}
+
+/* Navbar și bordura animată */
+.site-header .navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundal semitransparent pentru navbar */
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.4s ease-in-out, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecte de animație pentru navbar când treci cu mouse-ul */
+.site-header .navbar:hover {
+    border-color: #ff337a; /* Culoarea bordurii schimbă la roz aprins */
+    transform: translateY(-5px);
+}
+
+/* Navbar-link și animații */
+.site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Culoare și efecte la hover pentru linkurile din navbar */
+.site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background-color: #ff337a;
+    transform: scale(1.1);
+}
+
+/* Stiluri pentru secțiunea de conținut */
+.content-section {
+    background: rgba(0, 0, 0, 0.6); /* Fundal semitransparent pentru postări */
+    padding: 20px 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #666666;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecte la hover pentru postări */
+.content-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Umbra mai puternică */
+}
+
+/* Stilizarea titlului articolului */
+.article-title {
+    color: #ff7b93; /* Roz aprins pentru titluri */
+    font-size: 1.75rem;
+}
+
+/* Titluri la hover */
+a.article-title:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Efecte pentru conținutul articolului */
+.article-content {
+    white-space: pre-line;
+}
+
+.article-img {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    margin-right: 16px;
+    border-radius: 8px; /* Colțuri rotunjite pentru imagine */
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Stiluri pentru butonul like */
+.like-button {
+    background-color: #ff337a; /* Culoare de fundal roz aprins */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Culoare la hover pentru buton */
+.like-button:hover {
+    background-color: #ff4d6d; /* Culoare mai închisă la hover */
+    transform: scale(1.1);
+}
+
+/* Culoare la click */
+.like-button:active {
+    background-color: #ff2a00;
+    transform: scale(0.95);
+}
+
+/* Stilizare pentru iconițe */
+.like-button .icon {
+    margin-right: 10px;
+}
+
+/* Animație la încărcarea postărilor */
+.media-body {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecte de animație pentru postări */
+.content-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stiluri de hover pentru postări */
+.content-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modificări vizuale suplimentare pentru cardurile postărilor */
+.content-section {
+    border: 2px solid #3b3b3b;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-section:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Stiluri pentru butonul de like */
+.like-button {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adăugat borduri rotunjite pentru postările din home */
+.content-section {
+    border-radius: 15px;
+}
+

@@ -13,6 +13,7 @@ from .models import Post, Like
 from users.forms import PostForm
 from .forms import *
 from django.http import JsonResponse
+from .models import Comment
 
 
 def home(request):
@@ -136,3 +137,17 @@ def toggle_like(request, pk):
         liked = True
 
     return JsonResponse({'success': True, 'liked': liked})
+
+
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    # Verificăm dacă utilizatorul este autorul comentariului sau un administrator
+    if comment.user == request.user or request.user.is_staff:
+        comment.delete()  # Șterge comentariul
+        return redirect(request.META.get('HTTP_REFERER'))  # Revine pe pagina curentă
+
+    # Dacă utilizatorul nu este autorul sau administrator, redirecționăm spre pagina de login
+    return redirect('login')

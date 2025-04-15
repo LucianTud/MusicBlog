@@ -22,6 +22,20 @@ ul {
     border-bottom: 2px solid transparent;
     transition: border-color 0.4s ease-in-out, transform 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: -80px; /* Împinge navbar-ul în afacerea vederii */
+    width: 100%;
+    animation: slideDown 0.5s forwards; /* Animația pentru a face navbar-ul să coboare */
+}
+
+/* Animație pentru navbar - efect de coborâre din partea de sus */
+@keyframes slideDown {
+    from {
+        top: -80px; /* Poziția inițială, deasupra ecranului */
+    }
+    to {
+        top: 0; /* Poziția finală, unde navbar-ul se așează */
+    }
 }
 
 /* Efecte de animație pentru navbar când treci cu mouse-ul */
@@ -153,13 +167,6 @@ a.article-title:hover {
     animation: fadeInUp 0.5s forwards;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Stiluri de hover pentru postări */
 .content-section:hover {
     transform: scale(1.05);
@@ -183,20 +190,5 @@ a.article-title:hover {
 /* Stiluri pentru butonul de like */
 .like-button {
     background-color: blue;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s, transform 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    border: none
 }
-
-/* Adăugat borduri rotunjite pentru postările din home */
-.content-section {
-    border-radius: 15px;
-}
-

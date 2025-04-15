@@ -22,6 +22,7 @@ urlpatterns = [
     path('about/', views.about, name='blog-about'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('post/<int:pk>/like/', views.toggle_like, name='post-like'),
+    path('delete_comment/<int:comment_id>/', views.delete_comment, name='delete_comment'),
 ]
 
 if settings.DEBUG:

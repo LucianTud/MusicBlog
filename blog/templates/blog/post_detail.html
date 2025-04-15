@@ -45,6 +45,13 @@
                 <strong>{{ comment.user.username }}</strong>
                 <small class="text-muted">– {{ comment.date_posted|date:"F d, Y H:i" }}</small>
                 <p class="mt-2 mb-0">{{ comment.content|linebreaks }}</p>
+
+                {% if comment.user == user or user.is_staff %}
+                    <form method="POST" action="{% url 'delete_comment' comment.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm mt-2">Șterge</button>
+                    </form>
+                {% endif %}
             </div>
         {% endfor %}
     {% else %}
@@ -66,5 +73,6 @@
         <p><a href="{% url 'login' %}">Autentifică-te</a> pentru a adăuga un comentariu.</p>
     {% endif %}
 </div>
+
 {% endblock content %}
 
